@@ -18,9 +18,8 @@ while True:
 	split = line.split(" ")
 	if split[0] == "NEW_ROUND":
 		length = -5 #start at -5, add 5 in spawn zone to make 0
-		spawnzone = True
-	if spawnzone or split[0] == "OBJECTZONE_PLAYER_ENTERED" or split[0] == "TARGETZONE_PLAYER_ENTER":
-		spawnzone = False
+		split[0] == "TARGETZONE_PLAYER_ENTER"
+	if split[0] == "OBJECTZONE_PLAYER_ENTERED" or split[0] == "TARGETZONE_PLAYER_ENTER":
 		length += 5
 		print("CYCLE_WALLS_LENGTH "+str(length))
 		print("DESTROY_ALL\nSPAWN_OBJECTZONE "+str(random.randint(5,495))+" "+str(random.randint(5,495))+" 100 0 0 0 false 0 15 0")
