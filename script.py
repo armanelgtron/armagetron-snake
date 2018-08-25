@@ -23,4 +23,4 @@ while True:
 		length += 5
 		print("CYCLE_WALLS_LENGTH "+str(length))
 		print("DESTROY_ALL\nSPAWN_OBJECTZONE "+str(random.randint(5,495))+" "+str(random.randint(5,495))+" 30 0 0 0 false 0 15 0")
-		#print("COLLAPSE_ZONE\nSPAWN_ZONE target "+str(random.randint(5,495))+" "+str(random.randint(5,495))+" 100 0")
+		#print("COLLAPSE_ZONE\nSPAWN_ZONE target "+str(random.randint(5,495))+" "+str(random.randint(5,495))+" 30 0")
