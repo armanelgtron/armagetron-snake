@@ -13,14 +13,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## A few notes for usage (hopefully your text editor wraps!): 
 ## Objectzones are more reliable than targetzones, but is a +ap only feature (at the time of this writing). To use targetzones instead, just comment out the SPAWN_OBJECTZONE line and uncomment the SPAWN_ZONE target line. I've also combined DESTROY_ALL vs COLLAPSE_ZONE to the line so you don't get confused on what to comment and what to uncomment :)
 import random
+def newzone(pre=''):
+	return "DESTROY_ALL\n"+pre+"SPAWN_OBJECTZONE "+str(random.randint(5,495))+" "+str(random.randint(5,495))+" 30 0 0 0 false 0 15 0"
+	#return "COLLAPSE_ZONE\nSPAWN_ZONE target "+str(random.randint(5,495))+" "+str(random.randint(5,495))+" 30 0"
 while True:
 	line = input('')
-	split = line.split(" ")
+	splice = split = line.split(" ")
 	if split[0] == "NEW_ROUND":
-		length = -5 #start at -5, add 5 in spawn zone to make 0
-		split[0] == "TARGETZONE_PLAYER_ENTER"
+		length = 0
+		print(newzone("DELAY_COMMAND 0 "))
 	if split[0] == "OBJECTZONE_PLAYER_ENTERED" or split[0] == "TARGETZONE_PLAYER_ENTER":
 		length += 5
-		print("CYCLE_WALLS_LENGTH "+str(length))
-		print("DESTROY_ALL\nSPAWN_OBJECTZONE "+str(random.randint(5,495))+" "+str(random.randint(5,495))+" 30 0 0 0 false 0 15 0")
-		#print("COLLAPSE_ZONE\nSPAWN_ZONE target "+str(random.randint(5,495))+" "+str(random.randint(5,495))+" 30 0")
+		print("CYCLE_WALLS_LENGTH "+str(length)+"\n"+newzone())
