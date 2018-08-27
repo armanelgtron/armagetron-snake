@@ -13,7 +13,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## A few notes for usage (hopefully your text editor wraps!): 
 ## Objectzones are more reliable than targetzones, but is a +ap only feature (at the time of this writing). To use targetzones instead, just comment out the SPAWN_OBJECTZONE line and uncomment the SPAWN_ZONE target line. I've also combined DESTROY_ALL vs COLLAPSE_ZONE to the line so you don't get confused on what to comment and what to uncomment :)
 # user config
-listladder = True #set this to True to list the contents of the ladder
+listladder = False #set this to True to list the contents of the ladder
 ladderfile = "/home/armagetron/servers/snake/var/highscores.txt" #location of highscores.txt
 # end user config
 import random
